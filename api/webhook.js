@@ -49,14 +49,83 @@ function handleHerbInfo(parameters) {
     let info = '';
 
     switch (herbName) {
+        case 'chamomile':
+            info = 'Chamomile is commonly used to promote sleep, reduce stress, and soothe digestive discomfort.';
+            break;
+        case 'ashwagandha':
+            info = 'Ashwagandha is an adaptogenic herb used to reduce stress, enhance energy levels, and improve overall well-being.';
+            break;
+        case 'ginger':
+            info = 'Ginger is widely used to aid digestion, reduce nausea, and combat inflammation.';
+            break;
+        case 'lemongrass':
+            info = 'Lemongrass is used for relieving digestive issues, reducing anxiety, and promoting healthy hair and skin.';
+            break;
+        case 'coriander':
+            info = 'Coriander is known for its use in culinary dishes and for aiding digestion, regulating blood sugar levels, and acting as an antibacterial agent.';
+            break;
+        case 'moringa':
+            info = 'Moringa is a nutrient-dense herb packed with antioxidants and used for reducing inflammation, boosting immunity, and enhancing overall health.';
+            break;
+        case 'oregano':
+            info = 'Oregano is rich in antioxidants and has antimicrobial properties. It is used both in cooking and for its health benefits, including supporting the immune system.';
+            break;
+        case 'thyme':
+            info = 'Thyme is known for its antimicrobial properties, supporting respiratory health, and boosting the immune system.';
+            break;
+        case 'garlic':
+            info = 'Garlic is used for boosting the immune system, lowering cholesterol, and having antiviral and antibacterial effects.';
+            break;
+        case 'neem':
+            info = 'Neem is often used for its skin-healing properties, as a natural insect repellent, and for boosting immunity.';
+            break;
+        case 'lavender':
+            info = 'Lavender is commonly used to reduce anxiety, promote relaxation, and improve sleep quality.';
+            break;
+        case 'fennel':
+            info = 'Fennel is known for aiding digestion, reducing bloating, and promoting a healthy respiratory system.';
+            break;
+        case 'cinnamon':
+            info = 'Cinnamon is used to regulate blood sugar levels, improve digestion, and reduce inflammation.';
+            break;
+        case 'holy basil':
+            info = 'Holy basil, or tulsi, is revered in Ayurvedic medicine for boosting immunity, reducing stress, and improving respiratory health.';
+            break;
+        case 'sage':
+            info = 'Sage is used for its antioxidant and anti-inflammatory properties and is also known for improving brain function and memory.';
+            break;
+        case 'parsley':
+            info = 'Parsley is rich in vitamins and antioxidants. It is used to support kidney health, improve digestion, and freshen breath.';
+            break;
+        case 'cloves':
+            info = 'Cloves are used for their antiseptic properties, helping with toothaches, and aiding digestion.';
+            break;
+        case 'dill':
+            info = 'Dill is used to soothe digestive discomfort, reduce inflammation, and promote sleep.';
+            break;
+        case 'bay leaves':
+            info = 'Bay leaves are used in cooking for flavor enhancement and are known to aid digestion and reduce inflammation.';
+            break;
+        case 'saffron':
+            info = 'Saffron is prized for its antioxidant properties, mood-enhancing effects, and potential to improve memory.';
+            break;
+        case 'rosemary':
+            info = 'Rosemary enhances cognitive function, boosts memory, and adds flavor in cooking. It also has anti-inflammatory properties.';
+            break;
+        case 'mint':
+            info = 'Mint is well-known for aiding digestion, improving respiratory function, and promoting mental alertness.';
+            break;
+        case 'basil':
+            info = 'Basil has anti-inflammatory and antioxidant properties, and it is used to support heart health and reduce stress.';
+            break;
         case 'aloe vera':
-            info = 'Aloe Vera is widely known for its soothing and healing properties, particularly for skin burns and wounds.';
+            info = 'Aloe Vera is widely known for its soothing and healing properties, particularly for skin burns and wounds. It can also aid digestion.';
             break;
         case 'tulsi':
             info = 'Tulsi, also known as Holy Basil, is a sacred herb in India. It is often used in traditional medicine for its immunity-boosting properties.';
             break;
-        case 'mint':
-            info = 'Mint is well-known for its refreshing flavor and is used for digestion, respiratory disorders, and skin care.';
+        case 'turmeric':
+            info = 'Turmeric is well-known for its anti-inflammatory and antioxidant properties. It is used for healing and improving overall health.';
             break;
         default:
             info = `I currently don’t have information on ${herbName}. Can you specify another herb?`;
@@ -64,6 +133,7 @@ function handleHerbInfo(parameters) {
     }
     return info;
 }
+
 
 function handleHerbBenefits(parameters) {
     const herbName = parameters.HerbNames ? parameters.HerbNames[0].toLowerCase() : '';
@@ -79,12 +149,61 @@ function handleHerbBenefits(parameters) {
         case 'mint':
             benefits = 'Mint is known to relieve indigestion, improve cold symptoms, and boost mental alertness.';
             break;
+        case 'coriander':
+            benefits = 'Coriander is great for digestion, controlling blood sugar levels, and offering antibacterial properties.';
+            break;
+        case 'moringa':
+            benefits = 'Moringa is packed with nutrients, antioxidants, and anti-inflammatory compounds that support overall health.';
+            break;
+        case 'oregano':
+            benefits = 'Oregano is rich in antioxidants and has antibacterial properties. It also enhances flavor in cooking.';
+            break;
+        case 'lemongrass':
+            benefits = 'Lemongrass helps promote healthy hair, acts as a natural astringent, and supports digestive health.';
+            break;
+        case 'holy basil':
+            benefits = 'Holy basil is known for its healing properties, including stress relief, respiratory support, and immune-boosting effects.';
+            break;
+        case 'cinnamon':
+            benefits = 'Cinnamon is beneficial for digestion, reducing inflammation, and helping to regulate blood sugar levels.';
+            break;
+        case 'lavender':
+            benefits = 'Lavender helps to reduce stress and anxiety, improve sleep, and is often used in aromatherapy.';
+            break;
+        case 'thyme':
+            benefits = 'Thyme supports the immune system, aids in digestion, and has antimicrobial properties.';
+            break;
+        case 'ashwagandha':
+            benefits = 'Ashwagandha is known for its ability to reduce stress, boost energy levels, and enhance immune function.';
+            break;
+        case 'chamomile':
+            benefits = 'Chamomile improves sleep, helps reduce anxiety, and soothes the digestive system.';
+            break;
+        case 'garlic':
+            benefits = 'Garlic helps in boosting the immune system, reducing cholesterol, and has antibacterial properties.';
+            break;
+        case 'neem':
+            benefits = 'Neem is useful for skin care, blood purification, and improving overall immunity.';
+            break;
+        case 'ginger':
+            benefits = 'Ginger helps with digestion, reducing nausea, and has anti-inflammatory properties.';
+            break;
+        case 'rosemary':
+            benefits = 'Rosemary enhances cognitive function, improves memory, and adds flavor in cooking.';
+            break;
+        case 'turmeric':
+            benefits = 'Turmeric is well-known for its anti-inflammatory and antioxidant properties and is used for healing.';
+            break;
+        case 'basil':
+            benefits = 'Basil helps reduce inflammation, supports heart health, and boosts immunity.';
+            break;
         default:
             benefits = 'Please specify which herb you are asking about to get the appropriate benefits information.';
             break;
     }
     return benefits;
 }
+
 
 function handleHerbUsage(parameters) {
     const herbName = parameters.HerbNames ? parameters.HerbNames[0].toLowerCase() : '';
