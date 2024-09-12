@@ -1,15 +1,8 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const app = express();
-const router = express.Router();  // Create a router to handle the webhook route
-
-// Middleware
-app.use(bodyParser.json());
-app.use(cors()); // Handle CORS issues
+const router = express.Router();
 
 // Route for Dialogflow webhook
-router.post('/webhook', (req, res) => {
+router.post('/', (req, res) => {
     try {
         const intentName = req.body.queryResult.intent.displayName;
         const parameters = req.body.queryResult.parameters;
@@ -50,7 +43,7 @@ router.post('/webhook', (req, res) => {
     }
 });
 
-// Herb Information handler
+// Handler functions for different intents
 function handleHerbInfo(parameters) {
     const herbName = parameters.HerbNames ? parameters.HerbNames[0].toLowerCase() : '';
     let info = '';
@@ -72,7 +65,6 @@ function handleHerbInfo(parameters) {
     return info;
 }
 
-// Herb Benefits handler
 function handleHerbBenefits(parameters) {
     const herbName = parameters.HerbNames ? parameters.HerbNames[0].toLowerCase() : '';
     let benefits = '';
@@ -94,7 +86,6 @@ function handleHerbBenefits(parameters) {
     return benefits;
 }
 
-// Herb Usage handler
 function handleHerbUsage(parameters) {
     const herbName = parameters.HerbNames ? parameters.HerbNames[0].toLowerCase() : '';
     let usage = '';
@@ -116,7 +107,6 @@ function handleHerbUsage(parameters) {
     return usage;
 }
 
-// Herb Care handler
 function handleHerbCare(parameters) {
     const herbName = parameters.HerbNames ? parameters.HerbNames[0].toLowerCase() : '';
     let careInstructions = '';
@@ -138,7 +128,6 @@ function handleHerbCare(parameters) {
     return careInstructions;
 }
 
-// Herb Myths handler
 function handleHerbMyths(parameters) {
     const herbName = parameters.HerbNames ? parameters.HerbNames[0].toLowerCase() : '';
     let myths = '';
@@ -160,5 +149,4 @@ function handleHerbMyths(parameters) {
     return myths;
 }
 
-// Export the app to be used as a serverless function
-module.exports = app;
+module.exports = router; // Export router for Vercel
